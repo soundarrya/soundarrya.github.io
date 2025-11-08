@@ -5,103 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soundarya Sainathan | SQL Developer + Business Analyst</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-<header>
-  <div class="container">
+<header class="hero">
+  <div class="hero-content">
     <h1>Soundarya Sainathan</h1>
-    <p>SQL Developer + Business Analyst | ETL | KPIs | Data Modeling | Product Analytics</p>
-    <p>
-      <a href="mailto:Soundaryajb4@gmail.com">Email</a> |
-      <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/">LinkedIn</a> |
+    <h2>SQL Developer + Business Analyst</h2>
+    <p>Transforming business problems into data-driven stories using SQL, ETL, and analytics.</p>
+    <div class="links">
+      <a href="mailto:Soundaryajb4@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/">LinkedIn</a>
       <a href="https://github.com/soundarrya">GitHub</a>
-    </p>
+    </div>
   </div>
 </header>
 
-<main class="container">
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a data-driven professional with 3+ years of IT experience and an M.Sc. in Information Technology. 
-      My passion lies in solving real-world business problems through structured data models, 
-      clean SQL logic, and actionable insights.
-    </p>
-    <p>
-      I thrive at the intersection of Business Analysis and Data Engineering, converting messy requirements 
-      into measurable outcomes.
-    </p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I’m a data-driven professional with 3+ years of experience combining SQL development, business analysis, and ETL design. I thrive at the intersection of business context and technical depth, using data to solve problems and create measurable impact.</p>
+</section>
 
-  <section>
-    <h2>Signature Projects</h2>
+<section id="projects">
+  <h2>Signature Projects</h2>
+  <div class="grid">
 
-    <div class="project">
+    <div class="card">
       <h3>PawSure – Pet Insurance Cost Leakage Analytics</h3>
-      <p><strong>Focus:</strong> Insurance Claims Optimization | <strong>Stack:</strong> SQL Server · ETL · Views · SPs</p>
-      <ul>
-        <li>Designed fact/dimension model for claims data (Pet, Disease, Clinic, City).</li>
-        <li>Built ETL workflow (Stage → Transform → Load → Reject Log).</li>
-        <li>Created KPI Views identifying high-cost diseases and slow approval zones.</li>
-      </ul>
-      <p><strong>Impact:</strong> Exposed 70% of payout leakage sources → informed pricing reform.</p>
-      <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" class="btn">View Project</a>
+      <p><strong>Stack:</strong> SQL Server · ETL · Views · SPs</p>
+      <p>Built an end-to-end insurance claim analytics system detecting cost leakage across cities and clinics with automated KPI tracking.</p>
+      <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank">View Project</a>
     </div>
 
-    <div class="project">
-      <h3>StreamWise – OTT Recommendation Drop & Decision Fatigue Analytics</h3>
-      <p><strong>Focus:</strong> User Behavior Analysis | <strong>Stack:</strong> SQL Server · BA Case Study · KPI Modelling</p>
-      <ul>
-        <li>Modeled user watch sessions, scroll fatigue, and content drops.</li>
-        <li>Designed KPIs for session duration & recommendation efficiency.</li>
-        <li>Delivered BA narrative explaining root causes of content overload.</li>
-      </ul>
-      <p><strong>Outcome:</strong> UX insights for simplified recommendations → higher completion rate.</p>
-      <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" class="btn">View Project</a>
+    <div class="card">
+      <h3>StreamWise – OTT Decision Fatigue Analytics</h3>
+      <p><strong>Stack:</strong> SQL Server · BA Case Study · KPI Modelling</p>
+      <p>Analyzed user behavior & recommendation fatigue to improve content discovery and engagement for OTT platforms.</p>
+      <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank">View Project</a>
     </div>
 
-    <div class="project">
-      <h3>SaaSGuard – SaaS Churn Early Warning Analytics</h3>
-      <p><strong>Focus:</strong> Customer Retention | <strong>Stack:</strong> SQL Server · ETL · Excel Dashboard</p>
-      <ul>
-        <li>Built dimensional model (Customer, User, Date, Usage Fact).</li>
-        <li>Automated KPI Views → Daily Active Accounts & 30-Day Drop Rate.</li>
-        <li>Designed Excel dashboard for risk ranking and trend analysis.</li>
-      </ul>
-      <p><strong>Result:</strong> Predicted churn 30 days earlier → enabled retention intervention.</p>
-      <a href="https://github.com/soundarrya/saasguard-churn-analytics" class="btn">View Project</a>
+    <div class="card">
+      <h3>SaaSGuard – Churn Early Warning Analytics</h3>
+      <p><strong>Stack:</strong> SQL Server · ETL · Excel Dashboard</p>
+      <p>Created churn risk prediction model & visual dashboard for SaaS accounts, flagging early retention risks.</p>
+      <a href="https://github.com/soundarrya/saasguard-churn-analytics" target="_blank">View Project</a>
     </div>
-  </section>
 
-  <section>
-    <h2>Skills & Tools</h2>
-    <ul class="skills">
-      <li>SQL Server</li>
-      <li>T-SQL</li>
-      <li>ETL Design</li>
-      <li>Data Modeling</li>
-      <li>Excel Dashboards</li>
-      <li>Business Analysis</li>
-      <li>KPI Design</li>
-      <li>Requirement Gathering</li>
-      <li>Root Cause Analysis</li>
-    </ul>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>
-      <strong>Email:</strong> <a href="mailto:Soundaryajb4@gmail.com">Soundaryajb4@gmail.com</a><br />
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/">linkedin.com/in/soundarya-s-5a579421b</a><br />
-      <strong>GitHub:</strong> <a href="https://github.com/soundarrya">github.com/soundarrya</a>
-    </p>
-  </section>
-</main>
+<section id="skills">
+  <h2>Skills & Tools</h2>
+  <div class="skills">
+    <span>SQL Server</span><span>ETL</span><span>T-SQL</span><span>Data Modeling</span>
+    <span>Excel Dashboards</span><span>Business Analysis</span><span>KPI Design</span>
+    <span>Root Cause Analysis</span>
+  </div>
+</section>
 
 <footer>
-  <p>© 2025 Soundarya Sainathan | SQL Developer & Business Analyst</p>
+  <p>© 2025 Soundarya Sainathan — SQL Developer & Business Analyst</p>
 </footer>
+
+<script>
+  // Scroll reveal animations
+  ScrollReveal().reveal('.hero-content', { duration: 800, origin: 'top', distance: '50px' });
+  ScrollReveal().reveal('section', { duration: 800, origin: 'bottom', distance: '40px', interval: 150 });
+  ScrollReveal().reveal('.card', { duration: 800, scale: 0.9, interval: 200 });
+</script>
 
 </body>
 </html>
