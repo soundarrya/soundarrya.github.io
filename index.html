@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soundarya Sainathan | Business Analyst & SQL Developer</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Soundarya Sainathan — Business Analyst & SQL Developer. Portfolio showcasing BA case studies (BRD/FRD/SRS), SQL projects, diagrams, and UAT test cases.">
-  <meta name="keywords" content="Business Analyst, SQL Developer, BRD, FRD, SRS, UAT, Draw.io, Use Case Diagram, EV Charging, ATM Forecasting, Fraud Detection">
-  <link rel="canonical" href="https://soundarrya.github.io/">
-
+  <title>Soundarya Sainathan | SQL Developer + Business Analyst</title>
   <style>
     * {
       margin: 0;
@@ -349,9 +343,6 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s;
       border: 1px solid #e2e8f0;
-      display:flex;
-      flex-direction:column;
-      gap:0.6rem;
     }
 
     .project-card:hover {
@@ -363,20 +354,20 @@
     .project-card h3 {
       font-size: 1.4rem;
       color: #1e293b;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
     }
 
     .project-card .tech-stack {
       color: #2563eb;
       font-size: 0.9rem;
       font-weight: 600;
-      margin-bottom: 0.6rem;
+      margin-bottom: 1rem;
     }
 
     .project-card p {
       color: #64748b;
       line-height: 1.7;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .project-card a {
@@ -387,22 +378,10 @@
       align-items: center;
       gap: 0.5rem;
       transition: gap 0.3s;
-      margin-top: auto;
     }
 
     .project-card a:hover {
       gap: 0.8rem;
-    }
-
-    /* Project badge */
-    .project-badge{
-      background:#e6f0ff;
-      color:#1d4ed8;
-      font-weight:700;
-      font-size:0.8rem;
-      padding:4px 8px;
-      border-radius:8px;
-      align-self:flex-start;
     }
 
     /* Skills Section */
@@ -568,7 +547,6 @@
       <ul id="navMenu">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#ba-projects">BA Projects</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -581,11 +559,11 @@
     <div class="hero-container">
       <div class="hero-text">
         <h1>Hi, I'm <span>Soundarya Sainathan</span></h1>
-        <h2>Business Analyst · SQL Developer · Product-minded Data Analyst</h2>
+        <h2>SQL Developer · Business Analyst</h2>
         <p>I help teams turn messy data into clear decisions — building ETL pipelines, optimizing queries, and delivering KPI dashboards recruiters and stakeholders can trust.</p>
         <div class="hero-buttons">
-          <a href="#ba-projects" class="btn-primary">View BA Case Studies</a>
-          <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download Resume</a>
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="Soundarya Sainathan Resume.pdf" class="btn-secondary" download>Download Resume</a>
         </div>
         <div class="social-links">
           <a href="mailto:Soundaryajb4@gmail.com" title="Email">✉</a>
@@ -636,88 +614,38 @@
   <section id="projects">
     <div class="container">
       <h2>Signature Projects</h2>
-      <p class="section-subtitle">A showcase of my best work in data analytics, SQL development and business analysis.</p>
-
-      <!-- BA / SQL toggle -->
-      <div style="display:flex; justify-content:center; gap:1rem; margin-top:1rem;">
-        <button onclick="document.getElementById('ba-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary" style="padding:.5rem 1rem;border-radius:8px;">BA Projects</button>
-        <button onclick="document.getElementById('sql-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary" style="padding:.5rem 1rem;border-radius:8px;">SQL Projects</button>
-      </div>
-
-      <!-- BA Projects -->
-      <div id="ba-projects" style="margin-top:2.5rem;">
-        <h3 style="text-align:center; margin-bottom:1rem;">Business Analyst Case Studies</h3>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>Intelligent Fraud Detection & Risk Scoring System</h3>
-                <p class="tech-stack">Role: Business Analyst · Risk Scoring · Real-time Fraud Prevention</p>
-              </div>
-              <span class="project-badge">BA</span>
-            </div>
-            <p>Designed BRD/FRD/SRS, user stories, acceptance criteria and UAT. Built use case & sequence diagrams; proposed OTP/FaceID challenges and automated blocking rules.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> BRD · FRD · SRS · Diagrams · UAT</p>
-            <a href="/Project-Fraud-Detection/README.md" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-
-          <div class="project-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>Smart ATM Cash Forecasting & Refill System</h3>
-                <p class="tech-stack">Role: Business Analyst · Forecasting · Route Optimization</p>
-              </div>
-              <span class="project-badge">BA</span>
-            </div>
-            <p>Designed forecasting models, refill routing, activity diagrams, and UAT. Delivered operator dashboard and refill queue automation.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> FRD · SRS · Diagrams · UAT</p>
-            <a href="/Project-ATM-Forecasting/README.md" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-
-          <div class="project-card">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>EV Charging Slot Reservation & Load Management</h3>
-                <p class="tech-stack">Role: Business Analyst · IoT/Load Management · Dynamic Pricing</p>
-              </div>
-              <span class="project-badge">BA</span>
-            </div>
-            <p>End-to-end BA case: BRD/FRD/SRS, user stories, acceptance criteria, UAT, and UML diagrams for reservation, queueing and load balancing.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> BRD · FRD · SRS · Diagrams · UAT</p>
-            <a href="/Project-EV-Charging/README.md" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
+      <p class="section-subtitle">A showcase of my best work in data analytics and SQL development — role, approach, and impact.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>PawSure – Pet Insurance Analytics</h3>
+          <p class="tech-stack">Role: SQL Developer · SQL Server · ETL · Views · Stored Procedures</p>
+          <p>
+            Built an end-to-end claims analytics system to detect cost leakage and monitor KPIs across cities and clinics. 
+            Implemented incremental ETL, created a star schema, and wrote stored procedures and views to power daily reports.
+          </p>
+          <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Reduced manual verification time and enabled daily KPI tracking (replace with exact metric, e.g., “25% reduction”).</p>
+          <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank">View Project →</a>
+        </div>
+        <div class="project-card">
+          <h3>StreamWise – OTT Analytics</h3>
+          <p class="tech-stack">Role: Business Analyst · T-SQL · KPI Modelling</p>
+          <p>
+            Performed cohort and funnel analyses to measure recommendation fatigue and content discovery effectiveness. Built queries to calculate decay and refresh rates for recommendations, and translated findings into actionable experiments.
+          </p>
+          <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Identified segments where recommendation refresh increased engagement — pilot uplift: <em>XX%</em> (add actual number).</p>
+          <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank">View Project →</a>
+        </div>
+        <div class="project-card">
+          <h3>SaaSGuard – Churn Analytics</h3>
+          <p class="tech-stack">Role: Data Analyst · SQL Server · ETL · Excel Dashboard</p>
+          <p>
+            Built churn-risk queries and feature engineering pipelines for account-level retention scoring. Delivered an Excel dashboard used by account managers for targeted outreach.
+          </p>
+          <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Enabled proactive outreach to high-risk accounts (pilot retention lift: <em>XX%</em> — add metric).</p>
+          <a href="https://github.com/soundarrya/saasguard-churn-analytics" target="_blank">View Project →</a>
         </div>
       </div>
-
-      <!-- SQL Projects -->
-      <div id="sql-projects" style="margin-top:2.5rem;">
-        <h3 style="text-align:center; margin-bottom:1rem;">SQL / Data Projects</h3>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>PawSure – Pet Insurance Analytics</h3>
-            <p class="tech-stack">Role: SQL Developer · SQL Server · ETL · Views · Stored Procedures</p>
-            <p>Built an end-to-end claims analytics system to detect cost leakage and monitor KPIs across cities and clinics. Implemented incremental ETL, created a star schema, and wrote stored procedures and views to power daily reports.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Reduced manual verification time and enabled daily KPI tracking (replace with exact metric, e.g., “25% reduction”).</p>
-            <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="project-card">
-            <h3>StreamWise – OTT Analytics</h3>
-            <p class="tech-stack">Role: Business Analyst · T-SQL · KPI Modelling</p>
-            <p>Performed cohort and funnel analyses to measure recommendation fatigue and content discovery effectiveness. Built queries to calculate decay and refresh rates for recommendations, and translated findings into actionable experiments.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Identified segments where recommendation refresh increased engagement — pilot uplift: <em>XX%</em> (add actual number).</p>
-            <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="project-card">
-            <h3>SaaSGuard – Churn Analytics</h3>
-            <p class="tech-stack">Role: Data Analyst · SQL Server · ETL · Excel Dashboard</p>
-            <p>Built churn-risk queries and feature engineering pipelines for account-level retention scoring. Delivered an Excel dashboard used by account managers for targeted outreach.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Enabled proactive outreach to high-risk accounts (pilot retention lift: <em>XX%</em> — add metric).</p>
-            <a href="https://github.com/soundarrya/saasguard-churn-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-        </div>
-      </div>
-
-      <p style="margin-top:1rem; color:#64748b;">Tip: Add 1–2 screenshots or a short README for each BA project that highlights BRD/FRD/SRS and how to review artifacts (helps recruiters & hiring managers).</p>
+      <p style="margin-top:1rem; color:#64748b;">Tip: Add 1–2 screenshots or a short README for each repo that highlights how to run your queries or inspect the dashboard (helps recruiters & hiring managers).</p>
     </div>
   </section>
 
@@ -789,17 +717,7 @@
 
   <!-- Footer -->
   <footer>
-    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-        <p style="margin:0;color:#fff;font-weight:600;">© 2025 Soundarya Sainathan</p>
-        <div style="display:flex;gap:1rem;">
-          <a href="/Resume/Resume_Soundarya.pdf" download style="color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.15);padding:.5rem 1rem;border-radius:8px;">Download Resume</a>
-          <a href="https://github.com/soundarrya" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">GitHub</a>
-          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">LinkedIn</a>
-        </div>
-      </div>
-      <p style="color:#94a3b8;margin:0;">Built with care — BA + SQL hybrid portfolio</p>
-    </div>
+    <p>© 2025 Soundarya Sainathan — SQL Developer & Business Analyst</p>
   </footer>
 
   <script>
@@ -818,14 +736,14 @@
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 120) {
+        if (scrollY >= sectionTop - 100) {
           current = section.getAttribute('id');
         }
       });
 
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (current && link.getAttribute('href').slice(1) === current) {
+        if (link.getAttribute('href').slice(1) === current) {
           link.classList.add('active');
         }
       });
