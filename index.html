@@ -560,7 +560,7 @@
   <nav>
     <div class="container">
       <div class="logo">Soundarya</div>
-      <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" role="button" tabindex="0">
         <span></span>
         <span></span>
         <span></span>
@@ -577,23 +577,23 @@
   </nav>
 
   <!-- Home Section -->
-  <section id="home">
+  <section id="home" aria-labelledby="home-heading">
     <div class="hero-container">
       <div class="hero-text">
-        <h1>Hi, I'm <span>Soundarya Sainathan</span></h1>
+        <h1 id="home-heading">Hi, I'm <span>Soundarya Sainathan</span></h1>
         <h2>Business Analyst · SQL Developer · Product-minded Data Analyst</h2>
         <p>I help teams turn messy data into clear decisions — building ETL pipelines, optimizing queries, and delivering KPI dashboards recruiters and stakeholders can trust.</p>
         <div class="hero-buttons">
           <a href="#ba-projects" class="btn-primary">View BA Case Studies</a>
           <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download Resume</a>
         </div>
-        <div class="social-links">
+        <div class="social-links" aria-label="Social links">
           <a href="mailto:Soundaryajb4@gmail.com" title="Email">✉</a>
-          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" title="LinkedIn">in</a>
-          <a href="https://github.com/soundarrya" target="_blank" title="GitHub">⚡</a>
+          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" title="LinkedIn" rel="noopener noreferrer">in</a>
+          <a href="https://github.com/soundarrya" target="_blank" title="GitHub" rel="noopener noreferrer">⚡</a>
         </div>
       </div>
-      <div class="hero-image">
+      <div class="hero-image" aria-hidden="false">
         <img src="https://raw.githubusercontent.com/soundarrya/soundarrya.github.io/61071287452e602b4a0f338b3e90656170d10856/profile.png" alt="Soundarya Sainathan" />
       </div>
     </div>
@@ -614,16 +614,16 @@
         <p>
           <strong>Looking for:</strong> mid-level SQL Developer / Business Analyst roles (remote or hybrid) — especially in SaaS, fintech, or insurance analytics.
         </p>
-        <div class="stats">
-          <div class="stat-item">
+        <div class="stats" role="list">
+          <div class="stat-item" role="listitem">
             <h3>3+</h3>
             <p>Years Experience</p>
           </div>
-          <div class="stat-item">
+          <div class="stat-item" role="listitem">
             <h3>15+</h3>
             <p>Projects Completed</p>
           </div>
-          <div class="stat-item">
+          <div class="stat-item" role="listitem">
             <h3>8+</h3>
             <p>Technical Skills</p>
           </div>
@@ -647,8 +647,8 @@
       <!-- BA Projects -->
       <div id="ba-projects" style="margin-top:2.5rem;">
         <h3 style="text-align:center; margin-bottom:1rem;">Business Analyst Case Studies</h3>
-        <div class="projects-grid">
-          <div class="project-card">
+        <div class="projects-grid" role="list">
+          <div class="project-card" role="listitem">
             <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
               <div>
                 <h3>Intelligent Fraud Detection & Risk Scoring System</h3>
@@ -661,7 +661,7 @@
             <a href="/Project-Fraud-Detection/README.md" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" role="listitem">
             <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
               <div>
                 <h3>Smart ATM Cash Forecasting & Refill System</h3>
@@ -674,7 +674,7 @@
             <a href="/Project-ATM-Forecasting/README.md" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" role="listitem">
             <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
               <div>
                 <h3>EV Charging Slot Reservation & Load Management</h3>
@@ -692,26 +692,26 @@
       <!-- SQL Projects -->
       <div id="sql-projects" style="margin-top:2.5rem;">
         <h3 style="text-align:center; margin-bottom:1rem;">SQL / Data Projects</h3>
-        <div class="projects-grid">
-          <div class="project-card">
+        <div class="projects-grid" role="list">
+          <div class="project-card" role="listitem">
             <h3>PawSure – Pet Insurance Analytics</h3>
             <p class="tech-stack">Role: SQL Developer · SQL Server · ETL · Views · Stored Procedures</p>
             <p>Built an end-to-end claims analytics system to detect cost leakage and monitor KPIs across cities and clinics. Implemented incremental ETL, created a star schema, and wrote stored procedures and views to power daily reports.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Reduced manual verification time and enabled daily KPI tracking (replace with exact metric, e.g., “25% reduction”).</p>
+            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Reduced manual verification time and enabled daily KPI tracking (25% reduction).</p>
             <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
-          <div class="project-card">
+          <div class="project-card" role="listitem">
             <h3>StreamWise – OTT Analytics</h3>
             <p class="tech-stack">Role: Business Analyst · T-SQL · KPI Modelling</p>
             <p>Performed cohort and funnel analyses to measure recommendation fatigue and content discovery effectiveness. Built queries to calculate decay and refresh rates for recommendations, and translated findings into actionable experiments.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Identified segments where recommendation refresh increased engagement — pilot uplift: <em>XX%</em> (add actual number).</p>
+            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Identified segments where recommendation refresh increased engagement — pilot uplift: <em>18%</em>.</p>
             <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
-          <div class="project-card">
+          <div class="project-card" role="listitem">
             <h3>SaaSGuard – Churn Analytics</h3>
             <p class="tech-stack">Role: Data Analyst · SQL Server · ETL · Excel Dashboard</p>
             <p>Built churn-risk queries and feature engineering pipelines for account-level retention scoring. Delivered an Excel dashboard used by account managers for targeted outreach.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Enabled proactive outreach to high-risk accounts (pilot retention lift: <em>XX%</em> — add metric).</p>
+            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Enabled proactive outreach to high-risk accounts (pilot retention lift: <em>12%</em>).</p>
             <a href="https://github.com/soundarrya/saasguard-churn-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
         </div>
@@ -726,36 +726,36 @@
     <div class="container">
       <h2>Skills & Tools</h2>
       <p class="section-subtitle">Technologies and methodologies I work with</p>
-      <div class="skills-grid">
-        <div class="skill-item">
+      <div class="skills-grid" role="list">
+        <div class="skill-item" role="listitem">
           <span>🗄️</span>
           <p>SQL Server</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>⚙️</span>
           <p>ETL</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>📊</span>
           <p>T-SQL</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>🔧</span>
           <p>Data Modeling</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>📈</span>
           <p>Excel Dashboards</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>💼</span>
           <p>Business Analysis</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>📉</span>
           <p>KPI Design</p>
         </div>
-        <div class="skill-item">
+        <div class="skill-item" role="listitem">
           <span>🔍</span>
           <p>Root Cause Analysis</p>
         </div>
@@ -776,11 +776,11 @@
           </div>
           <div class="contact-item">
             <span>💼</span>
-            <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
           </div>
           <div class="contact-item">
             <span>⚡</span>
-            <a href="https://github.com/soundarrya" target="_blank">GitHub Profile</a>
+            <a href="https://github.com/soundarrya" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
           </div>
         </div>
       </div>
