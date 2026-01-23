@@ -85,6 +85,41 @@
       text-decoration: none;
       border: 1px solid #e2e8f0;
     }
+    /* Centering the About Section */
+#about { 
+  background: #f8fafc; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+}
+
+.about-content { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* Centers children horizontally */
+  gap: 1.5rem;
+}
+
+.about-content p { 
+  font-size: 1.15rem; 
+  line-height: 1.8; 
+  color: #475569; 
+  margin: 0; /* Let the gap handle spacing */
+}
+
+/* Workflow highlights - making them pop while centered */
+.workflow-text {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
     .contact-item:hover { background: #e0f2fe; transform: scale(1.02); border-color: #2563eb; }
     .contact-item span { font-size: 1.5rem; }
     .contact-item p { color: #1e293b; font-weight: 600; font-size: 1.1rem; margin: 0; }
@@ -124,15 +159,27 @@
   </section>
 
   <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
-      <div class="about-content">
-        <p>I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation.</p>
-        <p>My typical workflow is: <strong>Elicitation → Process Mapping → Data Modeling → User Stories → UAT Validation</strong>.</p>
+  <div class="container">
+    <h2>About Me</h2>
+    <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
+    
+    <div class="about-content">
+      <p>
+        I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation.
+      </p>
+      
+      <p>
+        I specialize in bridging the gap between stakeholder vision and technical reality, ensuring that development teams have the clarity they need to build high-impact products.
+      </p>
+
+      
+
+      <div class="workflow-text">
+        <strong>My Workflow:</strong> Elicitation ➔ Process Mapping ➔ Data Modeling ➔ User Stories ➔ UAT Validation
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="projects">
     <div class="container">
