@@ -10,65 +10,94 @@
   <link rel="canonical" href="https://soundarrya.github.io/">
 
   <style>
-    /* ... (All your existing CSS remains unchanged) ... */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+    
+    /* Navigation */
     nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); z-index: 1000; padding: 1rem 0; }
     nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
     nav .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; }
     nav ul { display: flex; list-style: none; gap: 2.5rem; }
     nav ul li a { text-decoration: none; color: #4b5563; font-weight: 500; transition: color 0.3s; font-size: 1rem; }
     nav ul li a:hover, nav ul li a.active { color: #2563eb; }
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-    .menu-toggle span { width: 25px; height: 3px; background: #2563eb; transition: 0.3s; }
+    
+    /* Hero Section */
     #home { min-height: 100vh; display: flex; align-items: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
     .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: #1e293b; margin-bottom: 1rem; line-height: 1.2; }
     .hero-text h1 span { color: #2563eb; }
     .hero-text h2 { font-size: clamp(1.2rem, 2vw, 1.5rem); color: #64748b; margin-bottom: 1.5rem; font-weight: 400; }
     .hero-text p { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; line-height: 1.8; }
+    
     .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary { padding: 0.9rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; display: inline-block; }
     .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); }
     .btn-secondary { padding: 0.9rem 2rem; background: transparent; color: #2563eb; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #2563eb; transition: all 0.3s; display: inline-block; }
     .btn-secondary:hover { background: #2563eb; color: white; transform: translateY(-2px); }
+    
     .hero-image { display: flex; justify-content: flex-end; align-items: center; position: relative; }
     .hero-image img { width: 350px; height: 350px; border-radius: 20px; object-fit: cover; box-shadow: 0 20px 60px rgba(37, 99, 235, 0.4); animation: float 6s ease-in-out infinite; position: relative; z-index: 1; }
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-    .social-links { display: flex; gap: 1rem; margin-top: 2rem; }
-    .social-links a { width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2563eb; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-    .social-links a:hover { background: #2563eb; color: white; transform: translateY(-3px); }
+
+    /* Sections General */
     section { padding: 5rem 2rem; }
     .container { max-width: 1200px; margin: 0 auto; }
     section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
     .section-subtitle { text-align: center; color: #64748b; margin-bottom: 3rem; }
-    #about { background: #f8fafc; }
-    .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
-    .about-content p { font-size: 1.1rem; line-height: 1.9; margin-bottom: 2rem; }
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .stat-item { padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-    .stat-item h3 { font-size: 2.5rem; color: #2563eb; }
+    
+    /* Project Cards */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .project-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.6rem; transition: 0.3s; }
+    .project-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.6rem; transition: 0.3s; height: 100%; }
     .project-card:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.15); }
-    .project-badge { background: #e6f0ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 8px; align-self: flex-start; }
+    .project-badge { background: #e6f0ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 8px; align-self: flex-start; font-size: 0.75rem; }
+    .tech-stack { color: #2563eb; font-weight: 600; font-size: 0.9rem; }
+    .project-card a { color: #2563eb; text-decoration: none; font-weight: 700; margin-top: auto; padding-top: 1rem; display: inline-block; }
+
+    /* Skills */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
     .skill-item { background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 2px solid transparent; }
     .skill-item:hover { border-color: #2563eb; transform: translateY(-5px); }
     .skill-item span { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
-    footer { background: #1e293b; color: white; padding: 2rem; text-align: center; }
+
+    /* CENTERED CONTACT SECTION */
+    #contact { background: white; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; }
+    .contact-info { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 1.5rem; 
+      width: 100%; 
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .contact-item { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 1rem; 
+      padding: 1rem 2rem; 
+      background: #f8fafc; 
+      border-radius: 12px; 
+      transition: all 0.3s; 
+      width: 100%; /* Ensures boxes are uniform width */
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+    }
+    .contact-item:hover { background: #e0f2fe; transform: scale(1.02); border-color: #2563eb; }
+    .contact-item span { font-size: 1.5rem; }
+    .contact-item p { color: #1e293b; font-weight: 600; font-size: 1.1rem; margin: 0; }
+
+    footer { background: #1e293b; color: white; padding: 2.5rem; text-align: center; }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
       <div class="logo">Soundarya</div>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
       <ul id="navMenu">
-        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -84,13 +113,8 @@
         <h2>Technical Business Analyst</h2>
         <p>I bridge the gap between business needs and technical execution. Specialized in <strong>Requirement Elicitation</strong>, <strong>BRD/FRD Documentation</strong>, and <strong>UAT</strong>, I leverage my SQL expertise to turn data into actionable product insights.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View BA Projects</a>
+          <a href="#projects" class="btn-primary">View Case Studies</a>
           <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download BA Resume</a>
-        </div>
-        <div class="social-links">
-          <a href="mailto:Soundaryajb4@gmail.com" title="Email">✉</a>
-          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">in</a>
-          <a href="https://github.com/soundarrya" target="_blank">⚡</a>
         </div>
       </div>
       <div class="hero-image">
@@ -104,21 +128,8 @@
       <h2>About Me</h2>
       <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
       <div class="about-content">
-        <p>
-          I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation that development teams can trust.
-        </p>
-        <p>
-          My typical workflow is: <strong>Requirement Elicitation → Process Mapping → Data Modeling → User Stories → UAT Validation</strong>. 
-          I focus on reducing delivery risk through precision documentation and stakeholder alignment.
-        </p>
-        <p>
-          <strong>Looking for:</strong> Technical Business Analyst or Business Analyst roles where I can contribute to product strategy and process optimization.
-        </p>
-        <div class="stats">
-          <div class="stat-item"><h3>3+</h3><p>Years Experience</p></div>
-          <div class="stat-item"><h3>15+</h3><p>Projects Delivered</p></div>
-          <div class="stat-item"><h3>FinTech</h3><p>Domain Expertise</p></div>
-        </div>
+        <p>I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation.</p>
+        <p>My typical workflow is: <strong>Elicitation → Process Mapping → Data Modeling → User Stories → UAT Validation</strong>.</p>
       </div>
     </div>
   </section>
@@ -126,52 +137,62 @@
   <section id="projects">
     <div class="container">
       <h2>Signature Projects</h2>
-      <p class="section-subtitle">Evidence of Requirement Intelligence & Analysis</p>
+      <p class="section-subtitle">A collection of BA Case Studies and SQL Intelligence projects</p>
       
-      <div style="display:flex; justify-content:center; gap:1rem; margin-top:1rem;">
-        <button onclick="document.getElementById('ba-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary">BA Case Studies</button>
-        <button onclick="document.getElementById('sql-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary">SQL Analysis</button>
-      </div>
+      <div id="ba-projects" class="projects-grid">
+        <div class="project-card">
+          <span class="project-badge">FLAGSHIP</span>
+          <h3>RAID-Sync Intelligence Suite</h3>
+          <p class="tech-stack">Focus: Requirement Intelligence</p>
+          <p>Designed an AI-assisted platform to audit requirement quality and visualize business logic. Decomposed epics into sprint-ready stories with full traceability.</p>
+          <p><strong>Artifacts:</strong> BRD · FRD · User Stories · RTM</p>
+          <a href="https://raid-sync.vercel.app/" target="_blank">View Case Study →</a>
+        </div>
 
-      <div id="ba-projects" style="margin-top:2.5rem;">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <h3>RAID-Sync Intelligence Suite</h3>
-              <span class="project-badge">FLAGSHIP</span>
-            </div>
-            <p class="tech-stack">Focus: Requirement Intelligence & Deconfliction</p>
-            <p>Designed an AI-assisted platform to audit requirement quality, visualize business logic, and decompose epics into sprint-ready stories with full traceability.</p>
-            <p><strong>Artifacts:</strong> BRD · FRD · User Stories · RTM · MOM</p>
-            <a href="https://raid-sync.vercel.app/" target="_blank">View Case Study →</a>
-          </div>
+        <div class="project-card">
+          <span class="project-badge">CASE STUDY</span>
+          <h3>Intelligent Fraud Detection</h3>
+          <p class="tech-stack">Focus: Risk & Risk Scoring</p>
+          <p>Developed BRD/FRD for a real-time fraud prevention system. Designed automated blocking rules and UML diagrams to mitigate operational risk.</p>
+          <p><strong>Artifacts:</strong> BRD · SRS · UML · UAT Scenarios</p>
+          <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank">View Project →</a>
+        </div>
 
-          <div class="project-card">
-            <h3>Intelligent Fraud Detection System</h3>
-            <p class="tech-stack">Focus: Risk Scoring & Real-time Prevention</p>
-            <p>Developed comprehensive BRD/FRD/SRS for a fraud prevention system. Designed use case diagrams and automated blocking rules to mitigate operational risk.</p>
-            <p><strong>Artifacts:</strong> BRD · SRS · UML Diagrams · UAT Scenarios</p>
-            <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank">View Project →</a>
-          </div>
-          
-          </div>
-      </div>
-    </div>
-  </section>
+        <div class="project-card">
+          <span class="project-badge">CASE STUDY</span>
+          <h3>Smart ATM Cash Management</h3>
+          <p class="tech-stack">Focus: Operational Efficiency</p>
+          <p>Led requirement phase for automated cash refills. Developed Activity Diagrams and User Stories to optimize logic and reduce ATM downtime.</p>
+          <p><strong>Artifacts:</strong> FRD · Process Flows · UAT</p>
+          <a href="https://github.com/soundarrya/Smart-ATM-Forecasting" target="_blank">View Project →</a>
+        </div>
 
-  <section id="skills">
-    <div class="container">
-      <h2>Skills & Tools</h2>
-      <p class="section-subtitle">Methodologies I use to drive product clarity</p>
-      <div class="skills-grid">
-        <div class="skill-item"><span>💼</span><p>Business Analysis</p></div>
-        <div class="skill-item"><span>📋</span><p>Requirement Elicitation</p></div>
-        <div class="skill-item"><span>📄</span><p>BRD/FRD Documentation</p></div>
-        <div class="skill-item"><span>✅</span><p>UAT Validation</p></div>
-        <div class="skill-item"><span>🗄️</span><p>SQL Data Analysis</p></div>
-        <div class="skill-item"><span>🔄</span><p>Agile/SDLC</p></div>
-        <div class="skill-item"><span>📈</span><p>Process Mapping</p></div>
-        <div class="skill-item"><span>🔍</span><p>Root Cause Analysis</p></div>
+        <div class="project-card">
+          <span class="project-badge">CASE STUDY</span>
+          <h3>EV Slot & Load Management</h3>
+          <p class="tech-stack">Focus: IoT & Dynamic Logic</p>
+          <p>Owned the end-to-end requirement lifecycle for a load-balancing platform. Authored BRDs to align stakeholder vision with technical constraints.</p>
+          <p><strong>Artifacts:</strong> BRD · FRD · Acceptance Criteria</p>
+          <a href="https://github.com/soundarrya/EV-CHARING-SLOT-RESERVATION-LOAD-MANAGEMENT" target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-badge">SQL ANALYSIS</span>
+          <h3>PawSure Insurance Analytics</h3>
+          <p class="tech-stack">Focus: Data-Driven Insights</p>
+          <p>Engineered a SQL pipeline to monitor insurance KPIs. Translated raw data into business metrics, reducing manual audit time by 25%.</p>
+          <p><strong>Impact:</strong> Enabled daily KPI tracking for stakeholders.</p>
+          <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-badge">SQL ANALYSIS</span>
+          <h3>StreamWise OTT Analytics</h3>
+          <p class="tech-stack">Focus: Product Experiments</p>
+          <p>Performed cohort analysis using T-SQL to measure user fatigue. Translated findings into actionable experiments for recommendation engines.</p>
+          <p><strong>Impact:</strong> Identified pilot uplift of 18% in engagement.</p>
+          <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank">View Project →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -179,26 +200,23 @@
   <section id="contact">
     <div class="container">
       <h2>Get In Touch</h2>
-      <p class="section-subtitle">Open to <strong>Business Analyst</strong> & <strong>Technical BA</strong> opportunities</p>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item"><span>📧</span><a href="mailto:Soundaryajb4@gmail.com">Soundaryajb4@gmail.com</a></div>
-          <div class="contact-item"><span>💼</span><a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">LinkedIn Profile</a></div>
-        </div>
+      <p class="section-subtitle">Open to <strong>Business Analyst</strong> & <strong>Technical BA</strong> roles</p>
+      
+      <div class="contact-info">
+        <a href="mailto:Soundaryajb4@gmail.com" class="contact-item">
+          <span>📧</span>
+          <p>Soundaryajb4@gmail.com</p>
+        </a>
+        <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" class="contact-item">
+          <span>💼</span>
+          <p>LinkedIn Profile</p>
+        </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-        <p>© 2025 Soundarya Sainathan</p>
-        <div style="display:flex;gap:1rem;">
-          <a href="/Resume/Resume_Soundarya.pdf" download style="color:#fff;text-decoration:none;">Download BA Resume</a>
-        </div>
-      </div>
-      <p style="color:#94a3b8;">Technical Business Analyst Portfolio</p>
-    </div>
+    <p>© 2025 Soundarya Sainathan | Technical Business Analyst</p>
   </footer>
 
   <script>
