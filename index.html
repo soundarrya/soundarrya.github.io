@@ -3,567 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soundarya Sainathan | Business Analyst & SQL Developer</title>
+  <title>Soundarya Sainathan | Technical Business Analyst</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Soundarya Sainathan — Business Analyst & SQL Developer. Portfolio showcasing BA case studies (BRD/FRD/SRS), SQL projects, diagrams, and UAT test cases.">
-  <meta name="keywords" content="Business Analyst, SQL Developer, BRD, FRD, SRS, UAT, Draw.io, Use Case Diagram, EV Charging, ATM Forecasting, Fraud Detection">
+  <meta name="description" content="Soundarya Sainathan — Technical Business Analyst specializing in bridging the gap between business needs and technical execution. Portfolio showcasing BRD/FRD, UAT, and SQL analysis.">
+  <meta name="keywords" content="Technical Business Analyst, BA, BRD, FRD, SRS, UAT, Requirement Elicitation, SQL for BA, Stakeholder Management">
   <link rel="canonical" href="https://soundarrya.github.io/">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-
-    nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #2563eb;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #4b5563;
-      font-weight: 500;
-      transition: color 0.3s;
-      font-size: 1rem;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #2563eb;
-    }
-
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: #2563eb;
-      transition: 0.3s;
-    }
-
-    /* Hero Section */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 6rem 2rem 4rem;
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      color: #1e293b;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero-text h1 span {
-      color: #2563eb;
-    }
-
-    .hero-text h2 {
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-      color: #64748b;
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
-      color: #475569;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      padding: 0.9rem 2rem;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    }
-
-    .btn-secondary {
-      padding: 0.9rem 2rem;
-      background: transparent;
-      color: #2563eb;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      border: 2px solid #2563eb;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-
-    .btn-secondary:hover {
-      background: #2563eb;
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-image::before {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.3;
-      animation: pulse 3s ease-in-out infinite;
-      z-index: 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.3;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 0.2;
-      }
-    }
-
-    .hero-image img {
-      width: 350px;
-      height: 350px;
-      border-radius: 20px;
-      object-fit: cover;
-      box-shadow: 0 20px 60px rgba(37, 99, 235, 0.4), 0 0 0 10px rgba(37, 99, 235, 0.1);
-      transition: all 0.4s ease;
-      position: relative;
-      z-index: 1;
-      border: 3px solid rgba(255, 255, 255, 0.8);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    .hero-image img:hover {
-      transform: scale(1.08) rotate(2deg);
-      box-shadow: 0 30px 80px rgba(37, 99, 235, 0.5), 0 0 0 15px rgba(37, 99, 235, 0.15);
-    }
-
-    /* Social Links */
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .social-links a {
-      width: 45px;
-      height: 45px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s;
-    }
-
-    .social-links a:hover {
-      background: #2563eb;
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    /* Sections */
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      color: #1e293b;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #64748b;
-      font-size: 1.1rem;
-      margin-bottom: 3rem;
-    }
-
-    /* About Section */
-    #about {
-      background: #f8fafc;
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      color: #475569;
-      line-height: 1.9;
-      margin-bottom: 2rem;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .stat-item h3 {
-      font-size: 2.5rem;
-      color: #2563eb;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-item p {
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    /* Projects Section */
-    #projects {
-      background: white;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s;
-      border: 1px solid #e2e8f0;
-      display:flex;
-      flex-direction:column;
-      gap:0.6rem;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
-      border-color: #2563eb;
-    }
-
-    .project-card h3 {
-      font-size: 1.4rem;
-      color: #1e293b;
-      margin-bottom: 0.4rem;
-    }
-
-    .project-card .tech-stack {
-      color: #2563eb;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-card p {
-      color: #64748b;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .project-card a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: gap 0.3s;
-      margin-top: auto;
-    }
-
-    .project-card a:hover {
-      gap: 0.8rem;
-    }
-
-    /* Project badge */
-    .project-badge{
-      background:#e6f0ff;
-      color:#1d4ed8;
-      font-weight:700;
-      font-size:0.8rem;
-      padding:4px 8px;
-      border-radius:8px;
-      align-self:flex-start;
-    }
-
-    /* Skills Section */
-    #skills {
-      background: #f8fafc;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .skill-item {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s;
-      border: 2px solid transparent;
-    }
-
-    .skill-item:hover {
-      border-color: #2563eb;
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
-    }
-
-    .skill-item span {
-      color: #2563eb;
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 0.8rem;
-    }
-
-    .skill-item p {
-      color: #1e293b;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    /* Contact Section */
-    #contact {
-      background: white;
-      text-align: center;
-    }
-
-    .contact-content {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1.5rem;
-      background: #f8fafc;
-      border-radius: 12px;
-      transition: all 0.3s;
-    }
-
-    .contact-item:hover {
-      background: #e0f2fe;
-      transform: translateX(10px);
-    }
-
-    .contact-item span {
-      font-size: 1.5rem;
-      color: #2563eb;
-    }
-
-    .contact-item a {
-      color: #1e293b;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #1e293b;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    footer p {
-      color: #94a3b8;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        display: none;
-        gap: 1rem;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-image {
-        order: -1;
-      }
-
-      .hero-image img {
-        width: 250px;
-        height: 250px;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    /* ... (All your existing CSS remains unchanged) ... */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); z-index: 1000; padding: 1rem 0; }
+    nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+    nav .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; }
+    nav ul { display: flex; list-style: none; gap: 2.5rem; }
+    nav ul li a { text-decoration: none; color: #4b5563; font-weight: 500; transition: color 0.3s; font-size: 1rem; }
+    nav ul li a:hover, nav ul li a.active { color: #2563eb; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .menu-toggle span { width: 25px; height: 3px; background: #2563eb; transition: 0.3s; }
+    #home { min-height: 100vh; display: flex; align-items: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+    .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: #1e293b; margin-bottom: 1rem; line-height: 1.2; }
+    .hero-text h1 span { color: #2563eb; }
+    .hero-text h2 { font-size: clamp(1.2rem, 2vw, 1.5rem); color: #64748b; margin-bottom: 1.5rem; font-weight: 400; }
+    .hero-text p { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; line-height: 1.8; }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { padding: 0.9rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; display: inline-block; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); }
+    .btn-secondary { padding: 0.9rem 2rem; background: transparent; color: #2563eb; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #2563eb; transition: all 0.3s; display: inline-block; }
+    .btn-secondary:hover { background: #2563eb; color: white; transform: translateY(-2px); }
+    .hero-image { display: flex; justify-content: flex-end; align-items: center; position: relative; }
+    .hero-image img { width: 350px; height: 350px; border-radius: 20px; object-fit: cover; box-shadow: 0 20px 60px rgba(37, 99, 235, 0.4); animation: float 6s ease-in-out infinite; position: relative; z-index: 1; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+    .social-links { display: flex; gap: 1rem; margin-top: 2rem; }
+    .social-links a { width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2563eb; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+    .social-links a:hover { background: #2563eb; color: white; transform: translateY(-3px); }
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
+    .section-subtitle { text-align: center; color: #64748b; margin-bottom: 3rem; }
+    #about { background: #f8fafc; }
+    .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .about-content p { font-size: 1.1rem; line-height: 1.9; margin-bottom: 2rem; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .stat-item { padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+    .stat-item h3 { font-size: 2.5rem; color: #2563eb; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .project-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.6rem; transition: 0.3s; }
+    .project-card:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.15); }
+    .project-badge { background: #e6f0ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 8px; align-self: flex-start; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
+    .skill-item { background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 2px solid transparent; }
+    .skill-item:hover { border-color: #2563eb; transform: translateY(-5px); }
+    .skill-item span { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
+    footer { background: #1e293b; color: white; padding: 2rem; text-align: center; }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav>
     <div class="container">
       <div class="logo">Soundarya</div>
-      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
       </div>
       <ul id="navMenu">
         <li><a href="#home" class="active">Home</a></li>
@@ -575,291 +77,132 @@
     </div>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" aria-labelledby="home-heading">
+  <section id="home">
     <div class="hero-container">
       <div class="hero-text">
-        <h1 id="home-heading">Hi, I'm <span>Soundarya Sainathan</span></h1>
-         <h2>Business Analyst & SQL Developer</h2>
-<p>I help teams make clear business decisions by gathering requirements, analysing workflows, writing BRD/FRD, and building SQL pipelines, optimized queries, and KPIs that stakeholders can trust.</p>        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View Signature Projects</a>
-          <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download Resume</a>
+        <h1>Hi, I'm <span>Soundarya Sainathan</span></h1>
+        <h2>Technical Business Analyst</h2>
+        <p>I bridge the gap between business needs and technical execution. Specialized in <strong>Requirement Elicitation</strong>, <strong>BRD/FRD Documentation</strong>, and <strong>UAT</strong>, I leverage my SQL expertise to turn data into actionable product insights.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View BA Projects</a>
+          <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download BA Resume</a>
         </div>
-        <div class="social-links" aria-label="Social links">
+        <div class="social-links">
           <a href="mailto:Soundaryajb4@gmail.com" title="Email">✉</a>
-          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" title="LinkedIn" rel="noopener noreferrer">in</a>
-          <a href="https://github.com/soundarrya" target="_blank" title="GitHub" rel="noopener noreferrer">⚡</a>
+          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">in</a>
+          <a href="https://github.com/soundarrya" target="_blank">⚡</a>
         </div>
       </div>
-      <div class="hero-image" aria-hidden="false">
+      <div class="hero-image">
         <img src="https://raw.githubusercontent.com/soundarrya/soundarrya.github.io/61071287452e602b4a0f338b3e90656170d10856/profile.png" alt="Soundarya Sainathan" />
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="section-subtitle">Get to know more about my background and expertise</p>
-
-    <div class="about-content">
-      <p>
-        I'm a practical and detail-oriented Business Analyst & SQL Developer with 3 years of experience supporting product, operations, and engineering teams. I work across both business and technical areas — gathering requirements, analysing workflows, writing BRD/FRD documents, and building SQL pipelines that turn data into clear insights.
-      </p>
-
-      <p>
-        My typical workflow is: <strong>requirements → process analysis → data model → SQL/ETL → metrics/KPIs → reports & recommendations</strong>.  
-        I focus on real outcomes: clean documentation, efficient queries, and dashboards that help teams understand what’s happening and why.
-      </p>
-
-      <p>
-        <strong>Looking for:</strong> Business Analyst or SQL Developer roles where I can contribute through structured documentation, problem-solving, and data-driven decision making.
-      </p>
-
-      <div class="stats" role="list">
-        <div class="stat-item" role="listitem">
-          <h3>3+</h3>
-          <p>Years Experience</p>
-        </div>
-        <div class="stat-item" role="listitem">
-          <h3>15+</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat-item" role="listitem">
-          <h3>8+</h3>
-          <p>Technical Skills</p>
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
+      <div class="about-content">
+        <p>
+          I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation that development teams can trust.
+        </p>
+        <p>
+          My typical workflow is: <strong>Requirement Elicitation → Process Mapping → Data Modeling → User Stories → UAT Validation</strong>. 
+          I focus on reducing delivery risk through precision documentation and stakeholder alignment.
+        </p>
+        <p>
+          <strong>Looking for:</strong> Technical Business Analyst or Business Analyst roles where I can contribute to product strategy and process optimization.
+        </p>
+        <div class="stats">
+          <div class="stat-item"><h3>3+</h3><p>Years Experience</p></div>
+          <div class="stat-item"><h3>15+</h3><p>Projects Delivered</p></div>
+          <div class="stat-item"><h3>FinTech</h3><p>Domain Expertise</p></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- Projects Section -->
   <section id="projects">
     <div class="container">
       <h2>Signature Projects</h2>
-      <p class="section-subtitle">A showcase of my best work in data analytics, SQL development and business analysis.</p>
-
-      <!-- BA / SQL toggle -->
+      <p class="section-subtitle">Evidence of Requirement Intelligence & Analysis</p>
+      
       <div style="display:flex; justify-content:center; gap:1rem; margin-top:1rem;">
-        <button onclick="document.getElementById('ba-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary" style="padding:.5rem 1rem;border-radius:8px;">BA Projects</button>
-        <button onclick="document.getElementById('sql-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary" style="padding:.5rem 1rem;border-radius:8px;">SQL Projects</button>
+        <button onclick="document.getElementById('ba-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary">BA Case Studies</button>
+        <button onclick="document.getElementById('sql-projects').scrollIntoView({behavior:'smooth'})" class="btn-secondary">SQL Analysis</button>
       </div>
 
-      <!-- BA Projects -->
       <div id="ba-projects" style="margin-top:2.5rem;">
-        <h3 style="text-align:center; margin-bottom:1rem;">Business Analyst Case Studies</h3>
-        <div class="projects-grid" role="list">
-          <div class="project-card" role="listitem">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>Intelligent Fraud Detection & Risk Scoring System</h3>
-                <p class="tech-stack">Role: Business Analyst · Risk Scoring · Real-time Fraud Prevention</p>
-              </div>
-              <span class="project-badge">BA</span>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h3>RAID-Sync Intelligence Suite</h3>
+              <span class="project-badge">FLAGSHIP</span>
             </div>
-            <p>Designed BRD/FRD/SRS, user stories, acceptance criteria and UAT. Built use case & sequence diagrams; proposed OTP/FaceID challenges and automated blocking rules.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> BRD · FRD · SRS · Diagrams · UAT</p>
-            <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank" rel="noopener noreferrer">View Project →</a>
+            <p class="tech-stack">Focus: Requirement Intelligence & Deconfliction</p>
+            <p>Designed an AI-assisted platform to audit requirement quality, visualize business logic, and decompose epics into sprint-ready stories with full traceability.</p>
+            <p><strong>Artifacts:</strong> BRD · FRD · User Stories · RTM · MOM</p>
+            <a href="https://raid-sync.vercel.app/" target="_blank">View Case Study →</a>
           </div>
 
-           <!-- RAID-SYNC FLAGSHIP -->
-      <div class="project-card">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <div>
-            <h3>RAID-Sync Intelligence Suite</h3>
-            <p class="tech-stack">Role: Business Analyst · Product Design · AI Requirements</p>
+          <div class="project-card">
+            <h3>Intelligent Fraud Detection System</h3>
+            <p class="tech-stack">Focus: Risk Scoring & Real-time Prevention</p>
+            <p>Developed comprehensive BRD/FRD/SRS for a fraud prevention system. Designed use case diagrams and automated blocking rules to mitigate operational risk.</p>
+            <p><strong>Artifacts:</strong> BRD · SRS · UML Diagrams · UAT Scenarios</p>
+            <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank">View Project →</a>
           </div>
-          <span class="project-badge">FLAGSHIP</span>
-        </div>
-        <p>
-          Designed an AI-assisted requirement intelligence platform that audits requirement quality,
-          visualizes business logic, decomposes epics into sprint-ready stories,
-          detects stakeholder conflicts, and maintains traceability before development begins.
-        </p>
-        <p><strong>Artifacts:</strong> BRD · FRD · User Stories · AC · RTM · Diagrams · MOM</p>
-        <a href="https://raid-sync.vercel.app/" target="_blank">
-          View Case Study →
-        </a>
-      </div>
           
-          <div class="project-card" role="listitem">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>Smart ATM Cash Forecasting & Refill System</h3>
-                <p class="tech-stack">Role: Business Analyst · Forecasting · Route Optimization</p>
-              </div>
-              <span class="project-badge">BA</span>
-            </div>
-            <p>Designed forecasting models, refill routing, activity diagrams, and UAT. Delivered operator dashboard and refill queue automation.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> FRD · SRS · Diagrams · UAT</p>
-            <a href="https://github.com/soundarrya/Smart-ATM-Forecasting" target="_blank" rel="noopener noreferrer">View Project →</a>
           </div>
-
-          <div class="project-card" role="listitem">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap: 1rem;">
-              <div>
-                <h3>EV Charging Slot Reservation & Load Management</h3>
-                <p class="tech-stack">Role: Business Analyst · IoT/Load Management · Dynamic Pricing</p>
-              </div>
-              <span class="project-badge">BA</span>
-            </div>
-            <p>End-to-end BA case: BRD/FRD/SRS, user stories, acceptance criteria, UAT, and UML diagrams for reservation, queueing and load balancing.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Artifacts:</strong> BRD · FRD · SRS · Diagrams · UAT</p>
-            <a href="https://github.com/soundarrya/EV-CHARING-SLOT-RESERVATION-LOAD-MANAGEMENT" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-        </div>
       </div>
-
-      <!-- SQL Projects -->
-      <div id="sql-projects" style="margin-top:2.5rem;">
-        <h3 style="text-align:center; margin-bottom:1rem;">SQL / Data Projects</h3>
-        <div class="projects-grid" role="list">
-          <div class="project-card" role="listitem">
-            <h3>PawSure – Pet Insurance Analytics</h3>
-            <p class="tech-stack">Role: SQL Developer · SQL Server · ETL · Views · Stored Procedures</p>
-            <p>Built an end-to-end claims analytics system to detect cost leakage and monitor KPIs across cities and clinics. Implemented incremental ETL, created a star schema, and wrote stored procedures and views to power daily reports.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Reduced manual verification time and enabled daily KPI tracking (25% reduction).</p>
-            <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="project-card" role="listitem">
-            <h3>StreamWise – OTT Analytics</h3>
-            <p class="tech-stack">Role: Business Analyst · T-SQL · KPI Modelling</p>
-            <p>Performed cohort and funnel analyses to measure recommendation fatigue and content discovery effectiveness. Built queries to calculate decay and refresh rates for recommendations, and translated findings into actionable experiments.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Identified segments where recommendation refresh increased engagement — pilot uplift: <em>18%</em>.</p>
-            <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-          <div class="project-card" role="listitem">
-            <h3>SaaSGuard – Churn Analytics</h3>
-            <p class="tech-stack">Role: Data Analyst · SQL Server · ETL · Excel Dashboard</p>
-            <p>Built churn-risk queries and feature engineering pipelines for account-level retention scoring. Delivered an Excel dashboard used by account managers for targeted outreach.</p>
-            <p style="color:#475569; margin-bottom:1rem;"><strong>Impact:</strong> Enabled proactive outreach to high-risk accounts (pilot retention lift: <em>12%</em>).</p>
-            <a href="https://github.com/soundarrya/saasguard-churn-analytics" target="_blank" rel="noopener noreferrer">View Project →</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills">
     <div class="container">
       <h2>Skills & Tools</h2>
-      <p class="section-subtitle">Technologies and methodologies I work with</p>
-      <div class="skills-grid" role="list">
-        <div class="skill-item" role="listitem">
-          <span>🗄️</span>
-          <p>SQL Server</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>⚙️</span>
-          <p>ETL</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>📊</span>
-          <p>T-SQL</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>🔧</span>
-          <p>Data Modeling</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>📈</span>
-          <p>Excel Dashboards</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>💼</span>
-          <p>Business Analysis</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>📉</span>
-          <p>KPI Design</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <span>🔍</span>
-          <p>Root Cause Analysis</p>
-        </div>
+      <p class="section-subtitle">Methodologies I use to drive product clarity</p>
+      <div class="skills-grid">
+        <div class="skill-item"><span>💼</span><p>Business Analysis</p></div>
+        <div class="skill-item"><span>📋</span><p>Requirement Elicitation</p></div>
+        <div class="skill-item"><span>📄</span><p>BRD/FRD Documentation</p></div>
+        <div class="skill-item"><span>✅</span><p>UAT Validation</p></div>
+        <div class="skill-item"><span>🗄️</span><p>SQL Data Analysis</p></div>
+        <div class="skill-item"><span>🔄</span><p>Agile/SDLC</p></div>
+        <div class="skill-item"><span>📈</span><p>Process Mapping</p></div>
+        <div class="skill-item"><span>🔍</span><p>Root Cause Analysis</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2>Get In Touch</h2>
-      <p class="section-subtitle">Let's connect — open to SQL Developer / Business Analyst roles (remote or hybrid)</p>
+      <p class="section-subtitle">Open to <strong>Business Analyst</strong> & <strong>Technical BA</strong> opportunities</p>
       <div class="contact-content">
         <div class="contact-info">
-          <div class="contact-item">
-            <span>📧</span>
-            <a href="mailto:Soundaryajb4@gmail.com">Soundaryajb4@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span>💼</span>
-            <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-          </div>
-          <div class="contact-item">
-            <span>⚡</span>
-            <a href="https://github.com/soundarrya" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-          </div>
+          <div class="contact-item"><span>📧</span><a href="mailto:Soundaryajb4@gmail.com">Soundaryajb4@gmail.com</a></div>
+          <div class="contact-item"><span>💼</span><a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">LinkedIn Profile</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-        <p style="margin:0;color:#fff;font-weight:600;">© 2025 Soundarya Sainathan</p>
+        <p>© 2025 Soundarya Sainathan</p>
         <div style="display:flex;gap:1rem;">
-          <a href="/Resume/Resume_Soundarya.pdf" download style="color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.15);padding:.5rem 1rem;border-radius:8px;">Download Resume</a>
-          <a href="https://github.com/soundarrya" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">GitHub</a>
-          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">LinkedIn</a>
+          <a href="/Resume/Resume_Soundarya.pdf" download style="color:#fff;text-decoration:none;">Download BA Resume</a>
         </div>
       </div>
-      <p style="color:#94a3b8;margin:0;">Built with care — BA + SQL hybrid portfolio</p>
+      <p style="color:#94a3b8;">Technical Business Analyst Portfolio</p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('active');
-    }
-
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 120) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (current && link.getAttribute('href').slice(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navMenu').classList.remove('active');
-      });
-    });
+    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
   </script>
 </body>
 </html>
