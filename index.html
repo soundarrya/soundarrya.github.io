@@ -51,8 +51,47 @@
     .project-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.6rem; transition: 0.3s; height: 100%; }
     .project-card:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.15); }
     .project-badge { background: #e6f0ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 8px; align-self: flex-start; font-size: 0.75rem; }
+    .project-badge.flagship-new { background: #fef3c7; color: #92400e; }
+    .project-badge.data-analysis { background: #d1fae5; color: #065f46; }
     .tech-stack { color: #2563eb; font-weight: 600; font-size: 0.9rem; }
     .project-card a { color: #2563eb; text-decoration: none; font-weight: 700; margin-top: auto; padding-top: 1rem; display: inline-block; }
+
+    /* BridgePay Featured Card */
+    .project-card.bridgepay-card {
+      border: 2px solid #2563eb;
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card.bridgepay-card::before {
+      content: '⭐ NEW';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #2563eb;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+    .project-card.bridgepay-card:hover {
+      box-shadow: 0 16px 50px rgba(37,99,235,0.25);
+    }
+    .impact-stats {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .stat-pill {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
 
     /* Skills */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
@@ -81,45 +120,41 @@
       background: #f8fafc; 
       border-radius: 12px; 
       transition: all 0.3s; 
-      width: 100%; /* Ensures boxes are uniform width */
+      width: 100%;
       text-decoration: none;
       border: 1px solid #e2e8f0;
     }
     /* Centering the About Section */
-#about { 
-  background: #f8fafc; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center; 
-}
-
-.about-content { 
-  max-width: 800px; 
-  margin: 0 auto; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; /* Centers children horizontally */
-  gap: 1.5rem;
-}
-
-.about-content p { 
-  font-size: 1.15rem; 
-  line-height: 1.8; 
-  color: #475569; 
-  margin: 0; /* Let the gap handle spacing */
-}
-
-/* Workflow highlights - making them pop while centered */
-.workflow-text {
-  background: #ffffff;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  border: 1px solid #e2e8f0;
-  display: inline-block;
-  margin-top: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
+    #about { 
+      background: #f8fafc; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      text-align: center; 
+    }
+    .about-content { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .about-content p { 
+      font-size: 1.15rem; 
+      line-height: 1.8; 
+      color: #475569; 
+      margin: 0;
+    }
+    .workflow-text {
+      background: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: 1px solid #e2e8f0;
+      display: inline-block;
+      margin-top: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
     .contact-item:hover { background: #e0f2fe; transform: scale(1.02); border-color: #2563eb; }
     .contact-item span { font-size: 1.5rem; }
     .contact-item p { color: #1e293b; font-weight: 600; font-size: 1.1rem; margin: 0; }
@@ -159,34 +194,48 @@
   </section>
 
   <section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
-    
-    <div class="about-content">
-      <p>
-        I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation.
-      </p>
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
       
-      <p>
-        I specialize in bridging the gap between stakeholder vision and technical reality, ensuring that development teams have the clarity they need to build high-impact products.
-      </p>
-
-      
-
-      <div class="workflow-text">
-        <strong>My Workflow:</strong> Elicitation ➔ Process Mapping ➔ Data Modeling ➔ User Stories ➔ UAT Validation
+      <div class="about-content">
+        <p>
+          I am a <strong>Technical Business Analyst</strong> with 3 years of experience in the Financial Services domain. My expertise lies in translating complex business requirements into clear, actionable documentation.
+        </p>
+        <p>
+          I specialize in bridging the gap between stakeholder vision and technical reality, ensuring that development teams have the clarity they need to build high-impact products.
+        </p>
+        <div class="workflow-text">
+          <strong>My Workflow:</strong> Elicitation ➔ Process Mapping ➔ Data Modeling ➔ User Stories ➔ UAT Validation
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="projects">
     <div class="container">
       <h2>Signature Projects</h2>
-      <p class="section-subtitle">A collection of BA Case Studies and SQL Intelligence projects</p>
+      <p class="section-subtitle">A collection of BA Case Studies and Data Analysis projects</p>
       
       <div id="ba-projects" class="projects-grid">
+
+        <!-- BridgePay — NEW FLAGSHIP (added first) -->
+        <div class="project-card bridgepay-card">
+          <span class="project-badge flagship-new">FLAGSHIP</span>
+          <h3>BridgePay — Cross-Border Payments for the Unbanked</h3>
+          <p class="tech-stack">Focus: Financial Inclusion & Payments Compliance</p>
+          <p>Designed end-to-end BA documentation for a mobile-first remittance platform serving 700M+ unbanked migrant workers globally. Mapped full As-Is/To-Be process flows and built a compliance framework across 6 regulatory jurisdictions.</p>
+          <div class="impact-stats">
+            <span class="stat-pill">$857B Market</span>
+            <span class="stat-pill">6 Compliance Frameworks</span>
+            <span class="stat-pill">3 User Personas</span>
+            <span class="stat-pill">Fee: 6.2% → 1.5%</span>
+          </div>
+          <p><strong>Artifacts:</strong> BRD · As-Is/To-Be Process Maps · Stakeholder Analysis · AML Framework · Risk Register · Business Case</p>
+          <a href="https://github.com/soundarrya/BridgePay-" target="_blank">View Project →</a>
+        </div>
+
+        <!-- RAID-Sync -->
         <div class="project-card">
           <span class="project-badge">FLAGSHIP</span>
           <h3>RAID-Sync Intelligence Suite</h3>
@@ -196,6 +245,7 @@
           <a href="https://raid-sync.vercel.app/" target="_blank">View Case Study →</a>
         </div>
 
+        <!-- Intelligent Fraud Detection -->
         <div class="project-card">
           <span class="project-badge">CASE STUDY</span>
           <h3>Intelligent Fraud Detection</h3>
@@ -205,6 +255,7 @@
           <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank">View Project →</a>
         </div>
 
+        <!-- Smart ATM -->
         <div class="project-card">
           <span class="project-badge">CASE STUDY</span>
           <h3>Smart ATM Cash Management</h3>
@@ -214,6 +265,7 @@
           <a href="https://github.com/soundarrya/Smart-ATM-Forecasting" target="_blank">View Project →</a>
         </div>
 
+        <!-- EV Slot -->
         <div class="project-card">
           <span class="project-badge">CASE STUDY</span>
           <h3>EV Slot & Load Management</h3>
@@ -223,8 +275,9 @@
           <a href="https://github.com/soundarrya/EV-CHARING-SLOT-RESERVATION-LOAD-MANAGEMENT" target="_blank">View Project →</a>
         </div>
 
+        <!-- PawSure -->
         <div class="project-card">
-          <span class="project-badge">SQL ANALYSIS</span>
+          <span class="project-badge data-analysis">DATA ANALYSIS</span>
           <h3>PawSure Insurance Analytics</h3>
           <p class="tech-stack">Focus: Data-Driven Insights</p>
           <p>Engineered a SQL pipeline to monitor insurance KPIs. Translated raw data into business metrics, reducing manual audit time by 25%.</p>
@@ -232,14 +285,16 @@
           <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank">View Project →</a>
         </div>
 
+        <!-- StreamWise -->
         <div class="project-card">
-          <span class="project-badge">SQL ANALYSIS</span>
+          <span class="project-badge data-analysis">DATA ANALYSIS</span>
           <h3>StreamWise OTT Analytics</h3>
           <p class="tech-stack">Focus: Product Experiments</p>
           <p>Performed cohort analysis using T-SQL to measure user fatigue. Translated findings into actionable experiments for recommendation engines.</p>
           <p><strong>Impact:</strong> Identified pilot uplift of 18% in engagement.</p>
           <a href="https://github.com/soundarrya/streamwise-netflix-decision-fatigue" target="_blank">View Project →</a>
         </div>
+
       </div>
     </div>
   </section>
