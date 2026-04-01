@@ -170,8 +170,6 @@
     align-items: center;
     position: relative;
   }
-
-  /* Rotating gold ring */
   .hero-photo-wrap::before {
     content: '';
     position: absolute;
@@ -181,8 +179,6 @@
     animation: rotatering 12s linear infinite;
     pointer-events: none;
   }
-
-  /* Glowing orb behind photo */
   .hero-photo-wrap::after {
     content: '';
     position: absolute;
@@ -193,25 +189,16 @@
     pointer-events: none;
     animation: orbpulse 3s ease-in-out infinite;
   }
-
   @keyframes orbpulse {
     0%, 100% { opacity: 0.7; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.1); }
   }
-
   @keyframes rotatering {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
-
-  .photo-frame {
-    position: relative;
-    z-index: 2;
-  }
-
-  /* Corner accent marks */
-  .photo-frame::before,
-  .photo-frame::after {
+  .photo-frame { position: relative; z-index: 2; }
+  .photo-frame::before, .photo-frame::after {
     content: '';
     position: absolute;
     width: 22px; height: 22px;
@@ -229,13 +216,10 @@
     border-width: 0 2px 2px 0;
     border-radius: 0 0 2px 0;
   }
-
   .hero-photo {
-    width: 280px;
-    height: 350px;
+    width: 280px; height: 350px;
     border-radius: 16px;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: cover; object-position: top center;
     display: block;
     box-shadow:
       0 0 0 2px rgba(201,168,76,0.5),
@@ -246,7 +230,6 @@
     animation: goldglow 3s ease-in-out infinite;
     transition: transform 0.4s ease;
   }
-
   @keyframes goldglow {
     0%, 100% {
       box-shadow:
@@ -265,10 +248,7 @@
         0 30px 70px rgba(0,0,0,0.5);
     }
   }
-
-  .hero-photo:hover {
-    transform: scale(1.03) translateY(-4px);
-  }
+  .hero-photo:hover { transform: scale(1.03) translateY(-4px); }
 
   /* SECTIONS */
   section { padding: 100px 40px; }
@@ -283,6 +263,105 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(34px, 5vw, 54px); font-weight: 300;
     color: var(--navy); line-height: 1.1; margin-bottom: 56px;
+  }
+
+  /* ── ABOUT ME ── */
+  .about-section { background: var(--navy); }
+  .about-section .section-title { color: var(--white); }
+  .about-section .section-label { color: var(--gold); }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  .about-text-block { display: flex; flex-direction: column; gap: 20px; }
+
+  .about-paragraph {
+    font-size: 15px;
+    line-height: 1.95;
+    color: rgba(255,255,255,0.58);
+    font-weight: 300;
+    position: relative;
+    padding-left: 20px;
+  }
+  .about-paragraph::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px;
+    width: 3px; height: calc(100% - 12px);
+    background: linear-gradient(180deg, var(--gold), transparent);
+    border-radius: 2px;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-highlight-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-highlight-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s;
+  }
+  .about-highlight-card:hover {
+    background: rgba(201,168,76,0.07);
+    border-color: rgba(201,168,76,0.35);
+    transform: translateX(4px);
+  }
+  .about-highlight-card:hover::after { transform: scaleY(1); }
+
+  .hl-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    filter: grayscale(0.2);
+  }
+  .hl-body {}
+  .hl-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 600;
+    color: var(--white); margin-bottom: 5px;
+  }
+  .hl-desc {
+    font-size: 13px; line-height: 1.65;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .about-tools {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .about-tool-tag {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gold-light);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.8px;
+    padding: 5px 13px;
+    border-radius: 40px;
   }
 
   /* EXPERTISE */
@@ -312,6 +391,7 @@
     background: var(--white); border-radius: 12px; padding: 36px 32px;
     position: relative; overflow: hidden; border: 1px solid rgba(10,22,40,0.05);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; flex-direction: column;
   }
   .case-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(10,22,40,0.11); }
   .case-card::after {
@@ -331,11 +411,106 @@
     padding: 4px 12px; border-radius: 40px; margin-bottom: 18px;
   }
   .case-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
-  .case-row { display: flex; flex-direction: column; gap: 12px; }
+  .case-row { display: flex; flex-direction: column; gap: 12px; flex: 1; }
   .case-item { display: flex; gap: 12px; font-size: 13px; line-height: 1.6; }
   .case-item-label { min-width: 76px; font-weight: 600; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); padding-top: 2px; }
   .case-item-text { color: var(--muted); flex: 1; }
   .case-impact { margin-top: 18px; padding: 12px 16px; background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; font-size: 13px; color: var(--navy); font-weight: 500; }
+
+  /* View Project button on case cards */
+  .case-footer {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .btn-view-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: transparent;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.35);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn-view-project:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .btn-view-project svg { width: 13px; height: 13px; transition: transform 0.2s; }
+  .btn-view-project:hover svg { transform: translateX(3px); }
+
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(5,12,25,0.82);
+    backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 48px 44px;
+    max-width: 680px; width: 100%;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-top: 4px solid var(--gold);
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute; top: 18px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 22px; line-height: 1;
+    padding: 4px 8px; border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .modal-close:hover { color: var(--navy); background: var(--cream); }
+
+  .modal-tag {
+    display: inline-block; background: rgba(201,168,76,0.12); color: #9a7a30;
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 40px; margin-bottom: 14px;
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 600; color: var(--navy);
+    line-height: 1.2; margin-bottom: 24px;
+  }
+  .modal-section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px; margin-top: 22px;
+  }
+  .modal-text {
+    font-size: 14px; line-height: 1.8; color: var(--muted);
+  }
+  .modal-divider { height: 1px; background: rgba(10,22,40,0.07); margin: 22px 0; }
+  .modal-impact {
+    padding: 14px 18px;
+    background: rgba(201,168,76,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px; color: var(--navy); font-weight: 500;
+    line-height: 1.7;
+  }
 
   /* SKILLS */
   .skills-section { background: var(--navy); }
@@ -371,6 +546,7 @@
     .hero-photo-wrap { display: none; }
     .cases-grid { grid-template-columns: 1fr; }
     .contact-inner { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
   }
   @media (max-width: 600px) {
     nav { padding: 14px 20px; }
@@ -378,6 +554,7 @@
     section { padding: 70px 20px; }
     .hero { padding: 90px 20px 70px; }
     .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .modal { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -387,6 +564,7 @@
 <nav>
   <div class="nav-logo">S<span>.</span>Sainathan</div>
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#work">Case Studies</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -421,6 +599,68 @@
     <div class="hero-photo-wrap">
       <div class="photo-frame">
         <img src="profile.png" alt="Soundarya Sainathan" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="about-inner">
+      <div class="about-text-block reveal">
+        <p class="about-paragraph">
+          I am a Business Analyst with 3 years of experience in Banking & Financial Services, specializing in requirement gathering, BRD/FRD documentation, user stories, and UAT support. I work closely with stakeholders, developers, and QA teams to ensure business requirements are clearly understood and effectively implemented.
+        </p>
+        <p class="about-paragraph">
+          I have hands-on experience in analyzing business needs, performing gap analysis, and translating them into functional solutions within Agile environments. My work focuses on improving process efficiency, reducing manual effort, and ensuring smooth delivery of projects.
+        </p>
+        <p class="about-paragraph">
+          I am also skilled in Advanced Excel and SQL for data analysis and reporting, and currently upskilling in Power BI to enhance data-driven decision making.
+        </p>
+        <div class="about-tools">
+          <span class="about-tool-tag">BRD / FRD</span>
+          <span class="about-tool-tag">User Stories</span>
+          <span class="about-tool-tag">UAT Support</span>
+          <span class="about-tool-tag">Gap Analysis</span>
+          <span class="about-tool-tag">Agile / Scrum</span>
+          <span class="about-tool-tag">SQL</span>
+          <span class="about-tool-tag">Advanced Excel</span>
+          <span class="about-tool-tag">Power BI ↗</span>
+        </div>
+      </div>
+
+      <div class="about-highlights reveal">
+        <div class="about-highlight-card">
+          <div class="hl-icon">🏦</div>
+          <div class="hl-body">
+            <div class="hl-title">Banking & Fintech Focus</div>
+            <div class="hl-desc">Deep domain knowledge across remittance, fraud detection, ATM operations, and insurance analytics in regulated financial environments.</div>
+          </div>
+        </div>
+        <div class="about-highlight-card">
+          <div class="hl-icon">🔗</div>
+          <div class="hl-body">
+            <div class="hl-title">Bridge Between Business & Tech</div>
+            <div class="hl-desc">Skilled at translating ambiguous business needs into precise functional requirements that development and QA teams can action confidently.</div>
+          </div>
+        </div>
+        <div class="about-highlight-card">
+          <div class="hl-icon">📊</div>
+          <div class="hl-body">
+            <div class="hl-title">Data-Driven Mindset</div>
+            <div class="hl-desc">Leverage SQL and Advanced Excel for analysis and reporting, with active upskilling in Power BI to strengthen data-driven storytelling.</div>
+          </div>
+        </div>
+        <div class="about-highlight-card">
+          <div class="hl-icon">⚡</div>
+          <div class="hl-body">
+            <div class="hl-title">Agile Delivery Experience</div>
+            <div class="hl-desc">Comfortable working in fast-paced Agile/Scrum teams — writing epics, managing backlogs, and facilitating sprint ceremonies.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -472,6 +712,7 @@
     <div class="section-label">Portfolio</div>
     <h2 class="section-title reveal">BA Case Studies</h2>
     <div class="cases-grid">
+
       <div class="case-card reveal">
         <div class="case-number">01</div>
         <span class="case-tag">Cross-Border Payments</span>
@@ -482,7 +723,14 @@
           <div class="case-item"><span class="case-item-label">Approach</span><span class="case-item-text">Designed As-Is/To-Be process flows, aligned regulatory requirements, and defined acceptance criteria.</span></div>
         </div>
         <div class="case-impact">✦ Improved transaction flow and reduced manual processing effort significantly.</div>
+        <div class="case-footer">
+          <button class="btn-view-project" onclick="openModal('modal-01')">
+            View Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+
       <div class="case-card reveal">
         <div class="case-number">02</div>
         <span class="case-tag">Risk & Compliance</span>
@@ -493,7 +741,14 @@
           <div class="case-item"><span class="case-item-label">Approach</span><span class="case-item-text">Defined fraud detection rules, collaborated with data teams, and built comprehensive UAT plans.</span></div>
         </div>
         <div class="case-impact">✦ Enhanced fraud detection efficiency and measurably reduced organisational risk.</div>
+        <div class="case-footer">
+          <button class="btn-view-project" onclick="openModal('modal-02')">
+            View Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+
       <div class="case-card reveal">
         <div class="case-number">03</div>
         <span class="case-tag">Operations</span>
@@ -504,7 +759,14 @@
           <div class="case-item"><span class="case-item-label">Approach</span><span class="case-item-text">Mapped current state gaps, defined automation requirements, and aligned with ops and tech teams.</span></div>
         </div>
         <div class="case-impact">✦ Reduced ATM downtime and improved operational efficiency through predictive automation.</div>
+        <div class="case-footer">
+          <button class="btn-view-project" onclick="openModal('modal-03')">
+            View Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+
       <div class="case-card reveal">
         <div class="case-number">04</div>
         <span class="case-tag">Insurance Analytics</span>
@@ -515,10 +777,86 @@
           <div class="case-item"><span class="case-item-label">Approach</span><span class="case-item-text">Developed SQL queries, created data models, and translated findings into actionable stakeholder dashboards.</span></div>
         </div>
         <div class="case-impact">✦ Eliminated manual reporting effort and enabled significantly faster, data-driven decisions.</div>
+        <div class="case-footer">
+          <button class="btn-view-project" onclick="openModal('modal-04')">
+            View Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<!-- PROJECT MODALS -->
+<!-- Modal 01 -->
+<div class="modal-overlay" id="modal-01">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-01')">✕</button>
+    <span class="modal-tag">Cross-Border Payments</span>
+    <h2 class="modal-title">BridgePay — Remittance Platform Modernisation</h2>
+    <div class="modal-section-label">Problem Statement</div>
+    <p class="modal-text">The existing remittance platform relied heavily on manual processing steps, leading to high operational overhead, frequent compliance gaps, and significant transaction delays that impacted customer satisfaction and regulatory standing.</p>
+    <div class="modal-section-label">My Role & Contributions</div>
+    <p class="modal-text">Acted as the lead Business Analyst responsible for end-to-end requirement gathering across business, compliance, and technology stakeholders. Produced comprehensive BRD documentation, authored user stories with clear acceptance criteria, and facilitated cross-functional workshops to align teams on the target state solution.</p>
+    <div class="modal-section-label">Approach</div>
+    <p class="modal-text">Conducted As-Is process mapping to identify bottlenecks and manual touchpoints. Collaborated with compliance teams to incorporate regulatory requirements (AML/KYC) into the To-Be process design. Defined precise acceptance criteria and coordinated UAT cycles to validate that the implemented solution met business expectations.</p>
+    <div class="modal-divider"></div>
+    <div class="modal-impact">✦ Outcome: Streamlined transaction flow with reduced manual processing effort, improved compliance traceability, and faster end-to-end remittance cycle times.</div>
+  </div>
+</div>
+
+<!-- Modal 02 -->
+<div class="modal-overlay" id="modal-02">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-02')">✕</button>
+    <span class="modal-tag">Risk & Compliance</span>
+    <h2 class="modal-title">Intelligent Fraud Detection System</h2>
+    <div class="modal-section-label">Problem Statement</div>
+    <p class="modal-text">The organisation's legacy transaction monitoring process was slow to flag suspicious activity, creating a widening window of financial exposure. Fraud cases were often identified days after occurrence, resulting in significant monetary and reputational risk.</p>
+    <div class="modal-section-label">My Role & Contributions</div>
+    <p class="modal-text">Responsible for preparing detailed BRD and FRD artefacts, defining business rules for fraud scoring and alert thresholds, and designing comprehensive UAT scenarios. Worked closely with data science and risk teams to translate detection model logic into testable business requirements.</p>
+    <div class="modal-section-label">Approach</div>
+    <p class="modal-text">Facilitated requirement workshops with fraud analysts to capture detection logic and edge cases. Defined rule-based triggers and exception workflows in the FRD. Built a UAT test matrix covering positive/negative transaction scenarios, and coordinated user sign-off with the risk operations team.</p>
+    <div class="modal-divider"></div>
+    <div class="modal-impact">✦ Outcome: Significantly faster fraud identification, reduced financial exposure, and a scalable detection framework that improved the organisation's overall risk posture.</div>
+  </div>
+</div>
+
+<!-- Modal 03 -->
+<div class="modal-overlay" id="modal-03">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-03')">✕</button>
+    <span class="modal-tag">Operations</span>
+    <h2 class="modal-title">Smart ATM Cash Management</h2>
+    <div class="modal-section-label">Problem Statement</div>
+    <p class="modal-text">Recurring ATM cash-out events were damaging customer trust and increasing operational costs due to reactive, manual replenishment processes with no demand forecasting capability. Branch operations teams lacked visibility into real-time cash levels across the ATM network.</p>
+    <div class="modal-section-label">My Role & Contributions</div>
+    <p class="modal-text">Led requirements gathering for the predictive cash management module, designed process flows for the automated replenishment workflow, and authored user stories for the operations and technology teams. Coordinated with the ATM vendor and internal ops stakeholders to define integration requirements.</p>
+    <div class="modal-section-label">Approach</div>
+    <p class="modal-text">Mapped the current-state replenishment process to identify failure points and data gaps. Defined automation triggers, alert thresholds, and escalation workflows in the To-Be design. Worked with the data team to specify historical transaction data requirements for the forecasting model.</p>
+    <div class="modal-divider"></div>
+    <div class="modal-impact">✦ Outcome: Reduced ATM cash-out incidents through predictive restocking, lower manual intervention effort for operations teams, and improved customer availability across the ATM network.</div>
+  </div>
+</div>
+
+<!-- Modal 04 -->
+<div class="modal-overlay" id="modal-04">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-04')">✕</button>
+    <span class="modal-tag">Insurance Analytics</span>
+    <h2 class="modal-title">PawSure Insurance KPI Analytics</h2>
+    <div class="modal-section-label">Problem Statement</div>
+    <p class="modal-text">KPI tracking across PawSure's insurance portfolios was conducted entirely through manual spreadsheet compilation, creating reporting bottlenecks, data inconsistencies, and significant delays in executive-level decision-making.</p>
+    <div class="modal-section-label">My Role & Contributions</div>
+    <p class="modal-text">Served as the Business Analyst responsible for SQL-driven data analysis, data model documentation, and translating analytical findings into stakeholder-ready reporting insights. Collaborated with the product and executive teams to define the KPI framework and reporting cadence.</p>
+    <div class="modal-section-label">Approach</div>
+    <p class="modal-text">Developed a suite of SQL queries to extract, cleanse, and aggregate policy and claims data from multiple source systems. Built data models to support recurring KPI dashboards and worked with the BI team to translate outputs into visual reporting formats. Validated data accuracy against legacy manual reports during transition.</p>
+    <div class="modal-divider"></div>
+    <div class="modal-impact">✦ Outcome: Eliminated manual reporting effort, established a reliable single source of truth for insurance KPIs, and enabled faster, more confident data-driven decisions at the executive level.</div>
+  </div>
+</div>
 
 <!-- SKILLS -->
 <section class="skills-section" id="skills">
@@ -586,12 +924,11 @@
       </div>
       <div class="contact-card reveal">
         <div class="contact-line"><div class="contact-icon">✉️</div><a href="mailto:soundaryajb4@gmail.com">soundaryajb4@gmail.com</a></div>
-<div class="contact-line">
-  <div class="contact-icon">💼</div>
-  <a href="https://www.linkedin.com/in/soundarya-s-5a579421b" target="_blank">
-    LinkedIn Profile
-  </a>
-</div>        <div class="contact-line"><div class="contact-icon">📄</div><a href="Soundarya_Sainathan_Resume.pdf" download>Download Resume (PDF)</a></div>
+        <div class="contact-line">
+          <div class="contact-icon">💼</div>
+          <a href="https://www.linkedin.com/in/soundarya-s-5a579421b" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="contact-line"><div class="contact-icon">📄</div><a href="Soundarya_Sainathan_Resume.pdf" download>Download Resume (PDF)</a></div>
       </div>
     </div>
   </div>
@@ -602,6 +939,7 @@
 </footer>
 
 <script>
+  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -610,8 +948,29 @@
       }
     });
   }, { threshold: 0.08 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Modal logic
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal(overlay.id);
+    });
+  });
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    }
+  });
 </script>
 </body>
 </html>
