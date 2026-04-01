@@ -1,240 +1,68 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soundarya Sainathan | Business Analyst</title>
-  <meta name="description" content="Soundarya Sainathan — Business Analyst specializing in bridging the gap between business needs and technical execution. Portfolio showcasing BRD/FRD, UAT, and SQL analysis.">
-  <meta name="keywords" content="Business Analyst, BA, BRD, FRD, SRS, UAT, Requirement Elicitation, SQL for BA, Stakeholder Management">
-  <link rel="canonical" href="https://soundarrya.github.io/">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Soundarya Sainathan | Business Analyst</title>
 
-    nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); z-index: 1000; padding: 1rem 0; }
-    nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-    nav .logo { font-size: 1.5rem; font-weight: 700; color: #2563eb; }
-    nav ul { display: flex; list-style: none; gap: 2.5rem; }
-    nav ul li a { text-decoration: none; color: #4b5563; font-weight: 500; transition: color 0.3s; font-size: 1rem; }
-    nav ul li a:hover, nav ul li a.active { color: #2563eb; }
+<style>
+body { font-family: Arial; margin: 0; background: #f9fafb; color: #1f2937; }
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+h1, h2 { color: #1d4ed8; }
+.project { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+</style>
 
-    #home { min-height: 100vh; display: flex; align-items: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
-    .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-
-    /* FIXED: tighter spacing between name, title, and description */
-    .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: #1e293b; margin-bottom: 0; line-height: 1.2; }
-    .hero-text h1 span { color: #2563eb; }
-    .hero-text h2 { font-size: clamp(1.2rem, 2vw, 1.5rem); color: #64748b; margin-bottom: 0; font-weight: 400; }
-    .hero-text p { font-size: 1.1rem; color: #475569; margin-bottom: 2rem; line-height: 1.8; margin-top: 0.8rem; }
-
-    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { padding: 0.9rem 2rem; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; display: inline-block; }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); }
-    .btn-secondary { padding: 0.9rem 2rem; background: transparent; color: #2563eb; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #2563eb; transition: all 0.3s; display: inline-block; }
-    .btn-secondary:hover { background: #2563eb; color: white; transform: translateY(-2px); }
-    .hero-image { display: flex; justify-content: flex-end; align-items: center; }
-    .hero-image img { width: 350px; height: 350px; border-radius: 20px; object-fit: cover; box-shadow: 0 20px 60px rgba(37, 99, 235, 0.4); animation: float 6s ease-in-out infinite; }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-
-    section { padding: 5rem 2rem; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
-    .section-subtitle { text-align: center; color: #64748b; margin-bottom: 3rem; }
-
-    #about { background: #f8fafc; display: flex; justify-content: center; align-items: center; text-align: center; }
-    .about-content { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-    .about-content p { font-size: 1.15rem; line-height: 1.8; color: #475569; margin: 0; }
-    .workflow-text { background: #ffffff; padding: 1rem 2rem; border-radius: 50px; border: 1px solid #e2e8f0; display: inline-block; margin-top: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .project-card { background: white; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.6rem; transition: 0.3s; height: 100%; }
-    .project-card:hover { transform: translateY(-8px); border-color: #2563eb; box-shadow: 0 12px 40px rgba(37,99,235,0.15); }
-    .project-badge { background: #e6f0ff; color: #1d4ed8; font-weight: 700; padding: 4px 8px; border-radius: 8px; align-self: flex-start; font-size: 0.75rem; }
-    .project-badge.flagship-new { background: #fef3c7; color: #92400e; }
-    .project-badge.data-analysis { background: #d1fae5; color: #065f46; }
-    .tech-stack { color: #2563eb; font-weight: 600; font-size: 0.9rem; }
-    .project-card a { color: #2563eb; text-decoration: none; font-weight: 700; margin-top: auto; padding-top: 1rem; display: inline-block; }
-    .project-card.bridgepay-card { border: 2px solid #2563eb; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); position: relative; overflow: hidden; }
-    .project-card.bridgepay-card::before { content: '⭐ NEW'; position: absolute; top: 16px; right: 16px; background: #2563eb; color: white; font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
-    .project-card.bridgepay-card:hover { box-shadow: 0 16px 50px rgba(37,99,235,0.25); }
-    .impact-stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
-    .stat-pill { background: #e0f2fe; color: #0369a1; font-size: 0.78rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
-
-    #skills { background: #f8fafc; }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
-    .skill-item { background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; border: 2px solid transparent; }
-    .skill-item:hover { border-color: #2563eb; transform: translateY(-5px); box-shadow: 0 8px 25px rgba(37,99,235,0.12); }
-    .skill-item span { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
-    .skill-item p { font-size: 0.85rem; font-weight: 600; color: #374151; }
-
-    #contact { background: white; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; }
-    .contact-info { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; width: 100%; max-width: 500px; margin: 0 auto; }
-    .contact-item { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem 2rem; background: #f8fafc; border-radius: 12px; transition: all 0.3s; width: 100%; text-decoration: none; border: 1px solid #e2e8f0; }
-    .contact-item:hover { background: #e0f2fe; transform: scale(1.02); border-color: #2563eb; }
-    .contact-item span { font-size: 1.5rem; }
-    .contact-item p { color: #1e293b; font-weight: 600; font-size: 1.1rem; margin: 0; }
-
-    footer { background: #1e293b; color: white; padding: 2rem 2.5rem; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-left { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-    .footer-links a:hover { color: white; }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-  </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="container">
-      <div class="logo">Soundarya</div>
-      <ul id="navMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<div class="container">
 
-  <section id="home">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h1>Hi, I'm <span>Soundarya Sainathan</span></h1>
-        <h2>Business Analyst</h2>
-        <p>I bridge the gap between business needs and technical execution. Specialized in <strong>Requirement Elicitation</strong>, <strong>BRD/FRD Documentation</strong>, and <strong>UAT</strong>, I leverage my SQL expertise to turn data into actionable product insights.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View Case Studies</a>
-          <a href="/Resume/Resume_Soundarya.pdf" class="btn-secondary" download>Download BA Resume</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="https://raw.githubusercontent.com/soundarrya/soundarrya.github.io/61071287452e602b4a0f338b3e90656170d10856/profile.png" alt="Soundarya Sainathan" />
-      </div>
-    </div>
-  </section>
+<h1>Hi, I'm Soundarya Sainathan</h1>
+<h2>Business Analyst | Banking & Financial Services</h2>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p class="section-subtitle">Bridging Business & Tech for 3+ Years</p>
-      <div class="about-content reveal">
-        <p>I am a <strong>Business Analyst</strong> with 3 years of experience in FinTech — specialising in <strong>payments, compliance, and financial inclusion</strong>. My engineering background means I speak both business and technical language fluently.</p>
-<p>I work closely with stakeholders, developers, and QA teams to ensure requirements are clearly defined and implemented effectively, reducing rework and improving delivery efficiency.</p>
-        <div class="workflow-text">
-          <strong>My Workflow:</strong> Elicitation ➔ Process Mapping ➔ Data Modeling ➔ User Stories ➔ UAT Validation
-        </div>
-      </div>
-    </div>
-  </section>
+<p>
+I am a Business Analyst with 3 years of experience in Banking & Financial Services, specializing in requirement gathering, BRD/FRD documentation, user stories, and UAT. I work closely with stakeholders, developers, and QA teams to ensure clear and effective delivery of business requirements.
+</p>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Signature Projects</h2>
-      <p class="section-subtitle">A collection of BA Case Studies and Data Analysis projects</p>
-      <div id="ba-projects" class="projects-grid">
+<hr/>
 
-        <div class="project-card bridgepay-card reveal">
-  <span class="project-badge flagship-new">FLAGSHIP</span>
-  <h3>BridgePay — Cross-Border Payments</h3>
-  <p class="tech-stack">Focus: Payments & Compliance</p>
-  <p>Worked on requirement gathering and documentation for a remittance platform, focusing on improving transaction flow and compliance requirements. Created As-Is/To-Be process flows and supported stakeholder discussions to align business and technical teams.</p>
-  <p><strong>Artifacts:</strong> BRD · As-Is/To-Be Process Maps · Stakeholder Analysis · UAT Scenarios</p>
-  <a href="https://github.com/soundarrya/BridgePay-" target="_blank">View Project →</a>
+<h2>Business Analyst Case Studies</h2>
+
+<div class="project">
+<h3>BridgePay — Cross-Border Payments</h3>
+<p><strong>Problem:</strong> Inefficient remittance process with manual steps and compliance challenges.</p>
+<p><strong>My Role:</strong> Business Analyst</p>
+<p><strong>What I Did:</strong> Gathered requirements, created BRD, defined user stories, and supported stakeholder discussions. Designed As-Is/To-Be process flows.</p>
+<p><strong>Impact:</strong> Improved transaction flow and reduced manual effort.</p>
 </div>
 
-        <div class="project-card reveal">
-          <span class="project-badge">FLAGSHIP</span>
-          <h3>RAID-Sync Intelligence Suite</h3>
-          <p class="tech-stack">Focus: Requirement Intelligence</p>
-<p>Worked on analyzing requirements and improving requirement clarity by structuring BRD, FRD, and user stories. Helped break down features into manageable tasks with clear traceability.</p>          <p><strong>Artifacts:</strong> BRD · FRD · User Stories · RTM</p>
-          <a href="https://raid-sync.vercel.app/" target="_blank">View Case Study →</a>
-        </div>
+<div class="project">
+<h3>Intelligent Fraud Detection</h3>
+<p><strong>Problem:</strong> Delay in identifying fraudulent transactions.</p>
+<p><strong>My Role:</strong> Business Analyst</p>
+<p><strong>What I Did:</strong> Prepared BRD/FRD, defined rules, and created UAT scenarios for fraud detection.</p>
+<p><strong>Impact:</strong> Improved fraud detection efficiency and reduced risk.</p>
+</div>
 
-        <div class="project-card reveal">
-          <span class="project-badge">CASE STUDY</span>
-          <h3>Intelligent Fraud Detection</h3>
-          <p class="tech-stack">Focus: Risk & Risk Scoring</p>
-          <p>Developed BRD/FRD for a real-time fraud prevention system. Designed automated blocking rules and UML diagrams to mitigate operational risk.</p>
-          <p><strong>Artifacts:</strong> BRD · SRS · UML · UAT Scenarios</p>
-          <a href="https://github.com/soundarrya/Intelligent-fraud-risk-scoring-system" target="_blank">View Project →</a>
-        </div>
+<div class="project">
+<h3>Smart ATM Cash Management</h3>
+<p><strong>Problem:</strong> Frequent ATM cash shortages due to poor forecasting.</p>
+<p><strong>My Role:</strong> Business Analyst</p>
+<p><strong>What I Did:</strong> Gathered requirements, created process flows, and defined user stories for automation.</p>
+<p><strong>Impact:</strong> Reduced ATM downtime and improved operational efficiency.</p>
+</div>
 
-         <div class="project-card reveal">
-          <span class="project-badge data-analysis">DATA ANALYSIS</span>
-          <h3>PawSure Insurance Analytics</h3>
-          <p class="tech-stack">Focus: Data-Driven Insights</p>
-          <p>Engineered a SQL pipeline to monitor insurance KPIs. Translated raw data into business metrics, reducing manual audit time by 25%.</p>
-          <p><strong>Impact:</strong> Enabled daily KPI tracking for stakeholders.</p>
-          <a href="https://github.com/soundarrya/pawsure-pet-insurance-analytics" target="_blank">View Project →</a>
-        </div>
+<div class="project">
+<h3>PawSure Insurance Analytics</h3>
+<p><strong>Problem:</strong> Manual tracking of insurance KPIs.</p>
+<p><strong>My Role:</strong> Business Analyst</p>
+<p><strong>What I Did:</strong> Used SQL for data analysis and created insights for stakeholders.</p>
+<p><strong>Impact:</strong> Reduced manual reporting effort and enabled faster decision-making.</p>
+</div>
 
-        
+</div>
 
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <h2>Skills & Tools</h2>
-      <p class="section-subtitle">The full BA toolkit I use across the project lifecycle</p>
-      <div class="skills-grid reveal">
-        <div class="skill-item"><span>📋</span><p>BRD / FRD</p></div>
-        <div class="skill-item"><span>🗺️</span><p>Process Mapping</p></div>
-        <div class="skill-item"><span>👥</span><p>Stakeholder Mgmt</p></div>
-        <div class="skill-item"><span>📖</span><p>User Stories</p></div>
-        <div class="skill-item"><span>🧪</span><p>UAT</p></div>
-        <div class="skill-item"><span>🗄️</span><p>SQL</p></div>
-        <div class="skill-item"><span>📊</span><p>Power BI</p></div>
-        <div class="skill-item"><span>🎨</span><p>Figma</p></div>
-        <div class="skill-item"><span>🔷</span><p>JIRA & Confluence</p></div>
-        <div class="skill-item"><span>🔄</span><p>Agile / Scrum</p></div>
-        <div class="skill-item"><span>🛡️</span><p>AML / KYC</p></div>
-        <div class="skill-item"><span>📉</span><p>Gap Analysis</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Get In Touch</h2>
-      <p class="section-subtitle">Open to <strong>Business Analyst</strong> & <strong>Technical BA</strong> roles</p>
-      <div class="contact-info reveal">
-        <a href="mailto:Soundaryajb4@gmail.com" class="contact-item">
-          <span>📧</span>
-          <p>Soundaryajb4@gmail.com</p>
-        </a>
-        <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank" class="contact-item">
-          <span>💼</span>
-          <p>LinkedIn Profile</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-left">© 2025 Soundarya Sainathan | Technical Business Analyst</p>
-      <div class="footer-links">
-        <a href="mailto:Soundaryajb4@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/soundarya-s-5a579421b/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/soundarrya" target="_blank">GitHub</a>
-        <a href="/Resume/Resume_Soundarya.pdf" download>Resume</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
